@@ -48,30 +48,18 @@ startButton.addEventListener('click', () => {
 
     console.log("started");
 
-    const tracks = 'test.mp3'
-    const cloudTracks = 'https://storage.googleapis.com/dryandra-woodland/test.mp3'
+    const tracks = ['a.mp3', 'b.mp3']
+    const cloudTracks = ['https://storage.googleapis.com/dryandra-woodland/test%3AB%3A1%3A1.mp3', 'https://storage.googleapis.com/dryandra-woodland/test%3AA%3A1%3A1.mp3']
 
-    loadFile(cloudTracks).then((track)=>{
-        if (audioCtx.state === 'suspended') {
-            audioCtx.resume();
-          }
-  
-          playTrack(track);
-    })
+    cloudTracks.forEach((element) =>{
+        console.log(typeof element, element)
+        loadFile(element).then((track)=>{
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+              }
+      
+              playTrack(track);
+        })    
+    });
+    
 });
-
-// const gcsUri = 'gs://dryandra-woodland/test.mp3';
-// const encoding = 'Encoding of the audio file, e.g. LINEAR16';
-// const sampleRateHertz = 16000;
-
-
-// fetch(gcsUri)
-//   .then(response => response.arrayBuffer())
-//   .then(arrayBuffer => audioContext.decodeAudioData(arrayBuffer))
-//   .then(audioBuffer => {
-//     let sourceNode = audioContext.createBufferSource();
-//     sourceNode.buffer = audioBuffer;
-//     sourceNode.connect(audioContext.destination);
-//     sourceNode.start();
-//   })  
-//   .catch(e => console.error(e));

@@ -1,3 +1,20 @@
+28/3/21
+
+Created context and buffer to play files from gcloud
+
+TODO: 
+
+create logic of ABCD pickers and apply to google cloud files
+    load files as an array before playing 
+    add pauses between tracks
+
+create a way of spatialising sound and a visual representation of that spatialisation (poss 3js and gestures but more like click tools)
+
+
+
+
+
+
 Audio files
 
 5 hours audio
