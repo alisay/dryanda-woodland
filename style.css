@@ -1,0 +1,29 @@
+:root {
+
+    --cyan: hsla(195, 98%, 55%, 1);
+    --blue: hsla(211, 92%, 52%, 1);
+    --black: hsla(0, 0%, 10%, 1);
+
+    --boxMain: var(--cyan);
+    --boxSecond: var(--blue);
+    --border: 1vmin solid var(--black);
+    --borderRad: 1px;
+}
+
+body {
+    background-color: rgb(255, 213, 255);
+}
+
+#startbutton {
+    width: 12vw;
+    line-height: 3;
+    background-color: var(--boxMain);
+    border: var(--border); border-radius: var(--borderRad);
+    position: absolute;
+    top: 1px;
+    left: 1px;
+  }
+  
+  #startbutton:hover {
+    background-color: var(--boxSecond);
+  }
