@@ -1,34 +1,3 @@
-// Imports the Google Cloud client library
-import { Storage } from '@google-cloud/storage';
-
-// Creates a client
-const storage = new Storage();
-const bucketName = 'dryandra-woodland';
-
-// CORS config
-const origin = 'https://dryandra.netlify.app/';
-const responseHeader = 'Content-Type';
-const maxAgeSeconds = 3600;
-const method = 'GET';
-
-async function configureBucketCors() {
-    await storage.bucket(bucketName).setCorsConfiguration([
-      {
-        maxAgeSeconds,
-        method: [method],
-        origin: [origin],
-        responseHeader: [responseHeader],
-      },
-    ]);
-  
-    console.log(`Bucket ${bucketName} was updated with a CORS config
-        to allow ${method} requests from ${origin} sharing 
-        ${responseHeader} responses across origins`);
-  }
-  
-  configureBucketCors().catch(console.error);
-
-
 // for cross browser compatibility
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 let audioCtx = null;

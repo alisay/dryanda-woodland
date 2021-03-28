@@ -1,0 +1,8 @@
+[
+    {
+      "origin": ["https://dryandra.netlify.app/"],
+      "method": ["GET"],
+      "responseHeader": ["Content-Type"],
+      "maxAgeSeconds": 3600
+    }
+]
